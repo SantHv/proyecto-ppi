@@ -63,7 +63,7 @@ class Login5(QMainWindow):
         self.letrero1.setStyleSheet("background-color: white ; color: #800080; padding: 50px;")
         self.letrero1.setFixedWidth(500)
 
-        self.letrero1.move(250, 40)
+        self.letrero1.move(250, 41)
 
         # Hacemos el letrero
         self.login = QLabel(self)
