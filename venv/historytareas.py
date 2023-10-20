@@ -13,7 +13,7 @@ class HistorialTareas(QMainWindow):
         super(HistorialTareas, self).__init__()
 
         self.setWindowTitle("Historial de Tareas")
-        self.setStyleSheet("background-color: #EDEDED;")
+
         self.ancho = 800
         self.alto = 600
         self.resize(self.ancho, self.alto)
@@ -26,7 +26,7 @@ class HistorialTareas(QMainWindow):
 
         self.setFixedWidth(self.ancho)
         self.setFixedHeight(self.alto)
-        self.setStyleSheet("background-color: White;")
+        self.setStyleSheet("background-color: #C5F9E8;")
 
         # Fuente para letreros y botones
         fuente = QFont()
@@ -41,7 +41,7 @@ class HistorialTareas(QMainWindow):
         letrero1 = QLabel(self)
         letrero1.setText("Historial de Tareas")
         letrero1.setFont(fuente)
-        letrero1.setStyleSheet("background-color: white; color: #800080; padding: 30px;")
+        letrero1.setStyleSheet("background-color: #C5F9E8; color: #09B4AC; padding: 30px;")
         letrero1.setFixedWidth(400)
         letrero1.move(250, 40)
 
@@ -54,11 +54,11 @@ class HistorialTareas(QMainWindow):
         # Botón para volver al menú principal
         self.volverMenu = QPushButton(self)
         self.volverMenu.setText("Volver al Menú")
-        self.volverMenu.setFixedWidth(150)
+        self.volverMenu.setFixedWidth(200)
         self.volverMenu.setFixedHeight(40)
         self.volverMenu.setFont(fuente2)
-        self.volverMenu.setStyleSheet("background-color: #FF66FF; color: #66FFFF; padding: 10px;")
-        self.volverMenu.move(325, 520)
+        self.volverMenu.setStyleSheet("background-color: #50D4FA; color: #000000  ; padding: 30px;")
+        self.volverMenu.move(310, 520)
         self.volverMenu.clicked.connect(self.cerrar_ventana)
 
     def cerrar_ventana(self):

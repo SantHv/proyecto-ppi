@@ -12,7 +12,7 @@ class registrar1(QMainWindow):
         self.setWindowTitle("Registro")
 
         # Poner el color  de fondo a la ventana
-        self.setStyleSheet("background-color: #EDEDED;")
+        self.setStyleSheet("background-color: #C5F9E8;")
 
         # Estableciendo las propiedades de ancho y alto
         self.ancho = 600
@@ -32,7 +32,7 @@ class registrar1(QMainWindow):
         self.setFixedWidth(self.ancho)
         self.setFixedHeight(self.alto)
 
-        self.setStyleSheet("background-color: White;")
+
 
         # Hacemos el tipo de letra
         self.letra1 = QFont()
@@ -58,7 +58,7 @@ class registrar1(QMainWindow):
         # Le asignamos el tipo de letra
         self.letrero1.setFont(self.letra1)
         # Le ponemos color de fondo, color de texto y margenes al letrero
-        self.letrero1.setStyleSheet("background-color: white ; color: #000000; padding: 40px;")
+        self.letrero1.setStyleSheet("background-color:#C5F9E8  ; color: #000000; padding: 40px;")
         self.letrero1.setFixedWidth(400)
         self.letrero1.setFixedHeight(40)
 
@@ -80,6 +80,7 @@ class registrar1(QMainWindow):
         self.editLogin = QLineEdit(self)
         # Definimos el ancho del campo en 200px
         self.editLogin.setFixedWidth(200)
+        self.editLogin.setStyleSheet("background-color: White")
         # Establecemos que solo se ingrese un numero maximo de 20 digitos
         self.editLogin.setMaxLength(20)
 
@@ -101,6 +102,7 @@ class registrar1(QMainWindow):
         self.editContraseña = QLineEdit(self)
         # Definimos el ancho del campo en 200px
         self.editContraseña.setFixedWidth(200)
+        self.editContraseña.setStyleSheet("background-color: White")
         # Establecemos que solo se ingrese un numero maximo de 20 digitos
         self.editContraseña.setMaxLength(20)
 
@@ -122,6 +124,7 @@ class registrar1(QMainWindow):
         # Hacemos el campo para ingresar el primer numero
         self.lineHotmail = QLineEdit(self)
         # Definimos el ancho del campo en 200px
+        self.lineHotmail.setStyleSheet("background-color: White")
         self.lineHotmail.setFixedWidth(200)
         # Establecemos que solo se ingrese un numero maximo de 20 digitos
         self.lineHotmail.setMaxLength(20)
@@ -144,6 +147,7 @@ class registrar1(QMainWindow):
         self.lineNombre = QLineEdit(self)
         # Definimos el ancho del campo en 200px
         self.lineNombre.setFixedWidth(200)
+        self.lineNombre.setStyleSheet("background-color: White")
         # Establecemos que solo se ingrese un numero maximo de 20 digitos
         self.lineNombre.setMaxLength(20)
 
@@ -154,7 +158,7 @@ class registrar1(QMainWindow):
         self.botonCalcular.setFont(self.letra3)
         self.botonCalcular.setFixedWidth(250)
         self.botonCalcular.setFixedHeight(40)
-        self.botonCalcular.setStyleSheet("background-color: #FF66FF; color: #000000  ; padding: 30px;")
+        self.botonCalcular.setStyleSheet("background-color: #50D4FA; color: #000000  ; padding: 30px;")
         self.botonCalcular.move(320, 500)
 
 
@@ -167,7 +171,7 @@ class registrar1(QMainWindow):
         self.volverMenu.setFixedWidth(250)
         self.volverMenu.setFixedHeight(40)
         # Le ponemos color de fondo, color de texto y margenes al boton
-        self.volverMenu.setStyleSheet("background-color: #FF66FF; color: #000000; padding: 30px;")
+        self.volverMenu.setStyleSheet("background-color: #50D4FA; color: #000000  ; padding: 30px;")
         # ponemos el boton de 5 hacia abajo
         self.volverMenu.move(50, 500)
         self.volverMenu.clicked.connect(self.cerrar_ventana)

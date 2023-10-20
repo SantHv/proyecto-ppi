@@ -8,7 +8,7 @@ class ReportarTarea(QMainWindow):
         super(ReportarTarea, self).__init__()
 
         self.setWindowTitle("Reportar Tarea")
-        self.setStyleSheet("background-color: #EDEDED;")
+        self.setStyleSheet("background-color: #C5F9E8;")
         self.ancho = 800
         self.alto = 600
         self.resize(self.ancho, self.alto)
@@ -21,7 +21,7 @@ class ReportarTarea(QMainWindow):
 
         self.setFixedWidth(self.ancho)
         self.setFixedHeight(self.alto)
-        self.setStyleSheet("background-color: White;")
+
 
         # Fuente para letreros y botones
         fuente = QFont()
@@ -36,7 +36,7 @@ class ReportarTarea(QMainWindow):
         letrero1 = QLabel(self)
         letrero1.setText("Reportar Tarea")
         letrero1.setFont(fuente)
-        letrero1.setStyleSheet("background-color: white; color: #800080; padding: 30px;")
+        letrero1.setStyleSheet("background-color: #C5F9E8; color: #09B4AC; padding: 30px;")
         letrero1.setFixedWidth(300)
         letrero1.move(300, 40)
 
@@ -48,20 +48,20 @@ class ReportarTarea(QMainWindow):
         # Botón para enviar el reporte
         self.enviarReporte = QPushButton(self)
         self.enviarReporte.setText("Enviar Reporte")
-        self.enviarReporte.setFixedWidth(150)
+        self.enviarReporte.setFixedWidth(200)
         self.enviarReporte.setFixedHeight(40)
         self.enviarReporte.setFont(fuente2)
-        self.enviarReporte.setStyleSheet("background-color: #FF66FF; color: #66FFFF; padding: 10px;")
+        self.enviarReporte.setStyleSheet("background-color: #50D4FA; color: #000000  ; padding: 30px;")
         self.enviarReporte.move(325, 450)
         self.enviarReporte.clicked.connect(self.enviar_reporte)
 
         # Botón para volver al menú principal
         self.volverMenu = QPushButton(self)
         self.volverMenu.setText("Volver al Menú")
-        self.volverMenu.setFixedWidth(150)
+        self.volverMenu.setFixedWidth(200)
         self.volverMenu.setFixedHeight(40)
         self.volverMenu.setFont(fuente2)
-        self.volverMenu.setStyleSheet("background-color: #FF66FF; color: #66FFFF; padding: 10px;")
+        self.volverMenu.setStyleSheet("background-color: #50D4FA; color: #000000  ; padding: 30px;")
         self.volverMenu.move(325, 521)
 
         self.volverMenu.clicked.connect(self.cerrar_ventana)

@@ -14,7 +14,7 @@ class addtarea11(QMainWindow):
         self.setWindowTitle("Agregar Tarea")
 
         # Poner el color  de fondo a la ventana
-        self.setStyleSheet("background-color: #EDEDED;")
+        self.setStyleSheet("background-color: #C5F9E8;")
 
         # Estableciendo las propiedades de ancho y alto
         self.ancho = 500
@@ -34,7 +34,7 @@ class addtarea11(QMainWindow):
         self.setFixedWidth(self.ancho)
         self.setFixedHeight(self.alto)
 
-        self.setStyleSheet("background-color: White;")
+        self.setStyleSheet("background-color: #C5F9E8;")
 
         # Hacemos el tipo de letra
         self.letra1 = QFont()
@@ -57,7 +57,7 @@ class addtarea11(QMainWindow):
         # Le asignamos el tipo de letra
         self.letrero1.setFont(self.letra1)
         # Le ponemos color de fondo, color de texto y margenes al letrero
-        self.letrero1.setStyleSheet("background-color: white ; color: black; padding: 30px;")
+        self.letrero1.setStyleSheet("background-color: #C5F9E8 ; color: black; padding: 30px;")
         self.letrero1.setFixedWidth(250)
 
         self.letrero1.move(0, 20)
@@ -68,6 +68,7 @@ class addtarea11(QMainWindow):
         self.titleTask = QLineEdit(self)
         # Definimos el ancho del campo en 200px
         self.titleTask.setFixedWidth(400)
+        self.titleTask.setStyleSheet("background-color: White")
         # Establecemos que solo se ingrese un numero maximo de 20 digitos
         self.titleTask.setMaxLength(100)
 
@@ -89,6 +90,7 @@ class addtarea11(QMainWindow):
         self.Qline1 = QLineEdit(self)
         # Definimos el ancho del campo en 200px
         self.Qline1.setFixedWidth(400)
+        self.Qline1.setStyleSheet("background-color: White")
         # Establecemos que solo se ingrese un numero maximo de 20 digitos
         self.Qline1.setMaxLength(300)
         self.Qline1.setFixedHeight(200)
@@ -102,7 +104,7 @@ class addtarea11(QMainWindow):
         # Establecemos el ancho del boton
         self.botonTarea.setFixedWidth(400)
         # Le ponemos color de fondo, color de texto y margenes al boton
-        self.botonTarea.setStyleSheet("background-color: purple; color: black; padding: 30px;")
+        self.botonTarea.setStyleSheet("background-color: #50D4FA; color: #000000  ; padding: 30px;")
         # ponemos el boton de 5 hacia abajo
         self.botonTarea.move(30, 380)
 
@@ -110,6 +112,7 @@ class addtarea11(QMainWindow):
         self.Qlabel2 = QLabel(self)
         # Le escribimos el texto
         self.Qlabel2.setText("Agregar ID:")
+
         # Le asignamos el tipo de letra
         self.Qlabel2.setFont(self.letra1)
         # Le ponemos color de fondo, color de texto y margenes al letrero
@@ -121,6 +124,7 @@ class addtarea11(QMainWindow):
         self.titleTask = QLineEdit(self)
         # Definimos el ancho del campo en 200px
         self.titleTask.setFixedWidth(400)
+        self.titleTask.setStyleSheet("background-color: White")
         # Establecemos que solo se ingrese un numero maximo de 20 digitos
         self.titleTask.setMaxLength(100)
 
@@ -132,7 +136,7 @@ class addtarea11(QMainWindow):
         # Establecemos el ancho del boton
         self.volverMenu.setFixedWidth(400)
         # Le ponemos color de fondo, color de texto y margenes al boton
-        self.volverMenu.setStyleSheet("background-color: #FF66FF; color: #66FFFF; padding: 30px;")
+        self.volverMenu.setStyleSheet("background-color: #50D4FA; color: #000000  ; padding: 30px;")
         # ponemos el boton de 5 hacia abajo
         self.volverMenu.move(30, 420)
         self.volverMenu.clicked.connect(self.cerrar_ventana)

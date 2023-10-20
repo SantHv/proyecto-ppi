@@ -11,10 +11,10 @@ class editTarea1(QMainWindow):
     def __init__(self):
         super(editTarea1,self).__init__()
 
-        self.setWindowTitle("Agregar Empleado")
+        self.setWindowTitle("EDITAR TAREA")
 
         # Poner el color  de fondo a la ventana
-        self.setStyleSheet("background-color: #EDEDED;")
+        self.setStyleSheet("background-color: #C5F9E8;")
 
         # Estableciendo las propiedades de ancho y alto
         self.ancho = 500
@@ -34,7 +34,7 @@ class editTarea1(QMainWindow):
         self.setFixedWidth(self.ancho)
         self.setFixedHeight(self.alto)
 
-        self.setStyleSheet("background-color: White;")
+
 
         # Hacemos el tipo de letra
         self.letra1 = QFont()
@@ -68,6 +68,7 @@ class editTarea1(QMainWindow):
         self.editLogin = QLineEdit(self)
         # Definimos el ancho del campo en 200px
         self.editLogin.setFixedWidth(300)
+        self.editLogin.setStyleSheet("background-color: White")
         # Establecemos que solo se ingrese un numero maximo de 20 digitos
         self.editLogin.setMaxLength(20)
 
@@ -79,7 +80,7 @@ class editTarea1(QMainWindow):
         # Establecemos el ancho del boton
         self.editTarea.setFixedWidth(300)
         # Le ponemos color de fondo, color de texto y margenes al boton
-        self.editTarea.setStyleSheet("background-color: #FF66FF; color: #000000; padding: 30px;")
+        self.editTarea.setStyleSheet("background-color: #50D4FA; color: #000000  ; padding: 30px;")
         # ponemos el boton de 5 hacia abajo
         self.editTarea.move(50,200)
 
@@ -91,7 +92,7 @@ class editTarea1(QMainWindow):
         # Establecemos el ancho del boton
         self.eliminarTarea.setFixedWidth(300)
         # Le ponemos color de fondo, color de texto y margenes al boton
-        self.eliminarTarea.setStyleSheet("background-color: #FF66FF; color: #000000; padding: 30px;")
+        self.eliminarTarea.setStyleSheet("background-color: #50D4FA; color: #000000  ; padding: 30px;")
         # ponemos el boton de 5 hacia abajo
         self.eliminarTarea.move(50, 240)
 
@@ -101,7 +102,7 @@ class editTarea1(QMainWindow):
         self.volverMenu.setFixedWidth(150)
         self.volverMenu.setFixedHeight(40)
         self.volverMenu.setFont(self.letra1)
-        self.volverMenu.setStyleSheet("background-color: #FF66FF; color: #66FFFF; padding: 10px;")
+        self.volverMenu.setStyleSheet("background-color: #50D4FA; color: #000000  ; padding: 10px;")
         self.volverMenu.move(50, 320)
         self.volverMenu.clicked.connect(self.cerrar_ventana)
 
