@@ -14,7 +14,7 @@ class Login2(QMainWindow):
         super(Login2, self).__init__()
 
         self.setWindowTitle("Empleador")
-        self.setStyleSheet("background-color: #EDEDED;")
+        self.setStyleSheet("background-color: #C5F9E8;")
         self.ancho = 1200
         self.alto = 600
         self.resize(self.ancho, self.alto)
@@ -27,7 +27,7 @@ class Login2(QMainWindow):
 
         self.setFixedWidth(self.ancho)
         self.setFixedHeight(self.alto)
-        self.setStyleSheet("background-color: White;")
+
 
         # Fuente para letreros y botones
         fuente = QFont()
@@ -42,7 +42,7 @@ class Login2(QMainWindow):
         letrero1 = QLabel(self)
         letrero1.setText("Menu Empleador")
         letrero1.setFont(fuente)
-        letrero1.setStyleSheet("background-color: white; color: #800080; padding: 30px;")
+        letrero1.setStyleSheet("background-color: #C5F9E8; color: #09B4AC; padding: 30px;")
         letrero1.setFixedWidth(300)
         letrero1.move(450, 40)
 
@@ -52,7 +52,7 @@ class Login2(QMainWindow):
         self.addTarea.setFixedWidth(350)
         self.addTarea.setFixedHeight(40)
         self.addTarea.setFont(fuente2)
-        self.addTarea.setStyleSheet("background-color: #FF66FF; color: #000000; padding: 30px;")
+        self.addTarea.setStyleSheet("background-color: #50D4FA; color: #000000; padding: 30px;")
         self.addTarea.move(220, 280)
         self.addTarea.clicked.connect(self.abrir_ventana_add_tarea)
 
@@ -62,7 +62,7 @@ class Login2(QMainWindow):
         self.historyTask.setFixedWidth(350)
         self.historyTask.setFixedHeight(40)
         self.historyTask.setFont(fuente2)
-        self.historyTask.setStyleSheet("background-color: #FF66FF; color: #000000; padding: 30px;")
+        self.historyTask.setStyleSheet("background-color: #50D4FA; color: #000000; padding: 30px;")
         self.historyTask.move(600, 280)
         self.historyTask.clicked.connect(self.abrir_ventana_history_task)
 
@@ -72,7 +72,7 @@ class Login2(QMainWindow):
         self.ediTareaclean.setFixedWidth(350)
         self.ediTareaclean.setFixedHeight(40)
         self.ediTareaclean.setFont(fuente2)
-        self.ediTareaclean.setStyleSheet("background-color: #FF66FF; color: #000000; padding: 30px;")
+        self.ediTareaclean.setStyleSheet("background-color: #50D4FA; color: #000000; padding: 30px;")
         self.ediTareaclean.move(600, 200)
         self.ediTareaclean.clicked.connect(self.abrir_ventana_edit_tarea)
 
@@ -82,7 +82,7 @@ class Login2(QMainWindow):
         self.addEmpleado.setFixedWidth(350)
         self.addEmpleado.setFixedHeight(40)
         self.addEmpleado.setFont(fuente2)
-        self.addEmpleado.setStyleSheet("background-color: #FF66FF; color: #000000; padding: 30px;")
+        self.addEmpleado.setStyleSheet("background-color: #50D4FA; color: #000000; padding: 30px;")
         self.addEmpleado.move(220, 200)
         self.addEmpleado.clicked.connect(self.abrir_ventana_add_empleado)
 

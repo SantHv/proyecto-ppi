@@ -17,7 +17,7 @@ class Login3(QMainWindow):
         self.setWindowTitle("Empleado")
 
         # Poner el color  de fondo a la ventana
-        self.setStyleSheet("background-color: #EDEDED;")
+        self.setStyleSheet("background-color: #C5F9E8;")
 
         # Estableciendo las propiedades de ancho y alto
         self.ancho = 1000
@@ -37,7 +37,7 @@ class Login3(QMainWindow):
         self.setFixedWidth(self.ancho)
         self.setFixedHeight(self.alto)
 
-        self.setStyleSheet("background-color: White;")
+
 
         # Hacemos el tipo de letra
         self.letra1 = QFont()
@@ -60,7 +60,7 @@ class Login3(QMainWindow):
         # Le asignamos el tipo de letra
         self.letrero1.setFont(self.letra1)
         # Le ponemos color de fondo, color de texto y margenes al letrero
-        self.letrero1.setStyleSheet("background-color: white ; color: #800080; padding: 30px;")
+        self.letrero1.setStyleSheet("background-color: #C5F9E8 ; color: #09B4AC; padding: 30px;")
         self.letrero1.setFixedWidth(350)
 
 
@@ -74,7 +74,7 @@ class Login3(QMainWindow):
         self.vertareas.setFixedHeight(40)
         self.vertareas.setFont(self.letra2)
         # Le ponemos color de fondo, color de texto y margenes al boton
-        self.vertareas.setStyleSheet("background-color: #FF66FF; color: #000000; padding: 30px;")
+        self.vertareas.setStyleSheet("background-color: #50D4FA; color: #000000; padding: 30px;")
         # ponemos el boton de 5 hacia abajo
         self.vertareas.move(190, 100)
         self.vertareas.clicked.connect(self.abrir_ventana_ver_tareas)
@@ -87,7 +87,7 @@ class Login3(QMainWindow):
         self.reportTask.setFixedHeight(40)
         self.reportTask.setFont(self.letra2)
         # Le ponemos color de fondo, color de texto y margenes al boton
-        self.reportTask.setStyleSheet("background-color: #FF66FF; color: #000000; padding: 30px;")
+        self.reportTask.setStyleSheet("background-color: #50D4FA; color: #000000; padding: 30px;")
         # ponemos el boton de 5 hacia abajo
         self.reportTask.move(560, 100)
         self.reportTask.clicked.connect(self.abrir_ventana_report_task)
@@ -99,7 +99,7 @@ class Login3(QMainWindow):
         self.historyTask.setFixedHeight(40)
         self.historyTask.setFont(self.letra2)
         # Le ponemos color de fondo, color de texto y margenes al boton
-        self.historyTask.setStyleSheet("background-color: #FF66FF; color: #000000; padding: 30px;")
+        self.historyTask.setStyleSheet("background-color: #50D4FA; color: #000000; padding: 30px;")
         # ponemos el boton de 5 hacia abajo
         self.historyTask.move(560, 200)
         self.historyTask.clicked.connect(self.abrir_ventana_history_task)
