@@ -16,11 +16,11 @@ class Login5(QMainWindow):
 
         self.setWindowTitle("Login de usuario")
 
-        # Poner el color  de fondo a la ventana
-        self.setStyleSheet("background-color: #EDEDED;")
+        self.setStyleSheet("background-color: #C5F9E8;")
+
 
         # Estableciendo las propiedades de ancho y alto
-        self.ancho = 800
+        self.ancho = 900
         self.alto = 600
 
         # Establecer el tamaño de la ventana:
@@ -37,7 +37,7 @@ class Login5(QMainWindow):
         self.setFixedWidth(self.ancho)
         self.setFixedHeight(self.alto)
 
-        self.setStyleSheet("background-color: White;")
+
 
         # Hacemos el tipo de letra
         self.letra1 = QFont()
@@ -45,6 +45,13 @@ class Login5(QMainWindow):
         self.letra1.setFamily("Arial")
         # Le asignamos el tamaño
         self.letra1.setPointSize(18)
+
+        self.logo_label = QLabel(self)
+        pixmap = QPixmap("imagenes/logo111.png")
+        self.logo_label.setPixmap(pixmap)
+        self.logo_label.setAlignment(Qt.AlignCenter)
+        self.logo_label.setFixedSize(pixmap.size())  # Use the size of the pixmap
+        self.logo_label.move(450, 220)  # Adjust the position as needed
 
         # Hacemos el tipo de letra
         self.letra2 = QFont()
@@ -60,10 +67,10 @@ class Login5(QMainWindow):
         # Le asignamos el tipo de letra
         self.letrero1.setFont(self.letra1)
         # Le ponemos color de fondo, color de texto y margenes al letrero
-        self.letrero1.setStyleSheet("background-color: white ; color: #800080; padding: 50px;")
+        self.letrero1.setStyleSheet("background-color: #C5F9E8 ; color: #09B4AC; padding: 50px;")
         self.letrero1.setFixedWidth(500)
 
-        self.letrero1.move(250, 41)
+        self.letrero1.move(300, 30)
 
         # Hacemos el letrero
         self.login = QLabel(self)
@@ -74,7 +81,7 @@ class Login5(QMainWindow):
         # Le ponemos color de fondo, color de texto y margenes al letrero
         self.login.setStyleSheet("background-color: #White; color: #0000FF; padding: 40px;")
         self.login.setFixedWidth(250)
-        self.login.move(300,100)
+        self.login.move(305,100)
 
 
 
@@ -87,6 +94,7 @@ class Login5(QMainWindow):
         self.editLogin.setFixedWidth(250)
         # Establecemos que solo se ingrese un numero maximo de 20 digitos
         self.editLogin.setMaxLength(20)
+        self.editLogin.setStyleSheet("background-color: white")
 
         self.editLogin.move(305, 160)
 
@@ -106,6 +114,7 @@ class Login5(QMainWindow):
         self.editContraseña = QLineEdit(self)
         # Definimos el ancho del campo en 200px
         self.editContraseña.setFixedWidth(250)
+        self.editContraseña.setStyleSheet("background-color: white")
         # Establecemos que solo se ingrese un numero maximo de 20 digitos
         self.editContraseña.setMaxLength(20)
         self.editContraseña.setEchoMode(QLineEdit.Password)
@@ -114,14 +123,14 @@ class Login5(QMainWindow):
         self.botonCalcular = QPushButton(self)
         self.botonCalcular.setText("Iniciar Sesión")
         self.botonCalcular.setFixedWidth(200)
-        self.botonCalcular.setStyleSheet("background-color: #FF66FF; color: #000000  ; padding: 30px;")
+        self.botonCalcular.setStyleSheet("background-color: #50D4FA; color: #000000  ; padding: 30px;")
         self.botonCalcular.move(325, 300)
         self.botonCalcular.setFixedHeight(40)
 
         self.botonRegistrar = QPushButton(self)
         self.botonRegistrar.setText("Registrarse")
         self.botonRegistrar.setFixedWidth(200)
-        self.botonRegistrar.setStyleSheet("background-color: #FF66FF; color: #000000  ; padding: 30px;")
+        self.botonRegistrar.setStyleSheet("background-color: #50D4FA; color: #000000  ; padding: 30px;")
         self.botonRegistrar.move(325, 360)
         self.botonRegistrar.setFixedHeight(40)
 
