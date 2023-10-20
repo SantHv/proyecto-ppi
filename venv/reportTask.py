@@ -62,7 +62,7 @@ class ReportarTarea(QMainWindow):
         self.volverMenu.setFixedHeight(40)
         self.volverMenu.setFont(fuente2)
         self.volverMenu.setStyleSheet("background-color: #FF66FF; color: #66FFFF; padding: 10px;")
-        self.volverMenu.move(325, 520)
+        self.volverMenu.move(325, 521)
 
         self.volverMenu.clicked.connect(self.cerrar_ventana)
 
