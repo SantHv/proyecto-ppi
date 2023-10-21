@@ -1,0 +1,121 @@
+Usuario: s1
+Contraseña: s2
+Correo: s3
+Nombre: s4
+
+Usuario: santiago
+Contraseña: 123456
+Correo: santiagohincapie5412
+Nombre: Santiago hincapie
+
+Usuario: ss
+Contraseña: ss
+Correo: ss
+Nombre: ss
+
+Usuario: prueba1
+Contraseña: 12345
+Correo: pruebasdas
+Nombre: prueba123
+
+Usuario: 11
+Contraseña: 11
+Correo: 111
+Nombre: 11
+
+Usuario: prueba123
+Contraseña: prueba123
+Correo: prueba123
+Nombre: prueba123
+Tipo_Usuario: <PyQt5.QtWidgets.QLineEdit object at 0x00000215AA17B370>
+
+Usuario: prueba5412
+Contraseña: prueba5412
+Correo: prueba5412
+Nombre: prueba5412
+Tipo_Usuario: prueba5412
+
+Usuario: prueba12345
+Contraseña: prueba12345
+Correo: prueba12345
+Nombre: prueba12345
+Tusuario: prueba12345
+
+Usuario: 1
+Contraseña: 1
+Correo: 1
+Nombre: 1
+Tusuario: 11
+
+Usuario: manu
+Contraseña: manu
+Correo: manu
+Nombre: manu
+Tusuario: manu
+
+Usuario: manu
+Contraseña: manu
+Correo: manu
+Nombre: manu
+Tusuario: manu
+
+Usuario: manu1
+Contraseña: manu1
+Correo: manu1
+Nombre: manu1
+Tipousuario: manu1
+
+Usuario: x
+Contraseña: x
+Correo: x
+Nombre: x
+Tipousuario: x
+
+Usuario: XX
+Contraseña: XX
+Correo: XX
+Nombre: XX
+Tipousuario: XX
+
+Usuario: santi11
+Contraseña: santi11
+Correo: santi11
+Nombre: santi11
+Tipousuario: x5412
+
+Usuario: pruebasd123
+Contraseña: pruebasd123
+Correo: pruebasd123
+Nombre: pruebasd123
+Tipousuario: x5412
+
+Usuario: 333
+Contraseña: 333
+Correo: 333
+Nombre: 333
+TipoUsuario: 333
+
+Usuario: ss
+Contraseña: ss
+Correo: ss
+Nombre: ss
+TipoUsuario: x5412
+
+Usuario: 3017
+Contraseña: 3017
+Correo: 3017
+Nombre: 3017
+TipoUsuario: x1234
+
+Usuario: 777
+Contraseña: 777
+Correo: 777
+Nombre: 777
+TipoUsuario: x1234
+
+Usuario: j
+Contraseña: j
+Correo: j
+Nombre: j
+TipoUsuario: x5412
+
