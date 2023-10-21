@@ -1,3 +1,4 @@
+import os
 import sys
 
 from PyQt5.QtCore import Qt
@@ -120,18 +121,39 @@ class Login5(QMainWindow):
         self.editContraseña.setEchoMode(QLineEdit.Password)
         self.editContraseña.move(305, 240)
 
+        # Hacemos el letrero
+        self.tipoUsuario = QLabel(self)
+        # Le escribimos el texto
+        self.tipoUsuario.setText("Tipo de Usuario")
+        # Le asignamos el tipo de letra
+        self.tipoUsuario.setFont(self.letra2)
+        # Le ponemos color de fondo, color de texto y margenes al letrero
+        self.tipoUsuario.setStyleSheet("background-color: #White; color: #FFFFFF; padding: 40px;")
+        self.tipoUsuario.setFixedWidth(200)
+        self.tipoUsuario.move(305,280)
+
+        # Hacemos el campo para ingresar el primer numero
+        self.editUsuario = QLineEdit(self)
+        # Definimos el ancho del campo en 200px
+        self.editUsuario.setFixedWidth(250)
+        self.editUsuario.setStyleSheet("background-color: white")
+        # Establecemos que solo se ingrese un numero maximo de 20 digitos
+        self.editUsuario.setMaxLength(20)
+
+        self.editUsuario.move(305, 320)
+
         self.botonCalcular = QPushButton(self)
         self.botonCalcular.setText("Iniciar Sesión")
         self.botonCalcular.setFixedWidth(200)
         self.botonCalcular.setStyleSheet("background-color: #50D4FA; color: #000000  ; padding: 30px;")
-        self.botonCalcular.move(325, 300)
+        self.botonCalcular.move(325, 450)
         self.botonCalcular.setFixedHeight(40)
 
         self.botonRegistrar = QPushButton(self)
         self.botonRegistrar.setText("Registrarse")
         self.botonRegistrar.setFixedWidth(200)
         self.botonRegistrar.setStyleSheet("background-color: #50D4FA; color: #000000  ; padding: 30px;")
-        self.botonRegistrar.move(325, 360)
+        self.botonRegistrar.move(325, 500)
         self.botonRegistrar.setFixedHeight(40)
 
         # Create a checkbox for toggling password visibility
@@ -154,20 +176,53 @@ class Login5(QMainWindow):
         # Obtenemos el nombre de usuario y contraseña ingresados
         username = self.editLogin.text()
         password = self.editContraseña.text()
+        tipo_usuario = self.editUsuario.text()  # Corrige esto para obtener el valor correcto
+        # Obtenemos la ruta del directorio del script actual
+        script_dir = os.path.dirname(os.path.abspath(__file__))
 
-        # Aquí debes implementar la lógica para verificar las credenciales.
-        if username == 'empleador' and password == 'prueba12345':
-            QMessageBox.information(self, 'Éxito', 'Inicio de sesión exitoso.')
+        # Combinamos la ruta del directorio con el nombre del archivo
+        registros_file = os.path.join(script_dir, 'registros.txt')
+        # Intentamos abrir el archivo "registros.txt" en modo lectura
+        try:
+            with open('registros.txt', 'r') as archivo:
+                # Leemos el contenido del archivo línea por línea
+                lineas = archivo.readlines()
 
-            # Abre la ventana Ventana2
-            self.abrir_ventana2()
-        elif username == 'empleado' and password == 'prueba12345':
-            QMessageBox.information(self, 'Éxito', 'Inicio de sesión exitoso.')
+            # Creamos una lista de diccionarios para almacenar los datos de usuarios
+            usuarios = []
+            usuario_actual = {}
+            for linea in lineas:
+                linea = linea.strip()  # Eliminamos espacios en blanco y saltos de línea
+                if linea:
+                    clave, valor = linea.split(': ')
+                    usuario_actual[clave] = valor
+                else:
+                    usuarios.append(usuario_actual)
+                    usuario_actual = {}
 
-            # Abre la ventana Ventana2
-            self.abrir_ventana33()
-        else:
-            QMessageBox.warning(self, 'Error', 'Credenciales incorrectas.')
+            # Buscamos si las credenciales coinciden con algún usuario
+            for usuario in usuarios:
+                if (
+                        usuario.get("Usuario") == username and
+                        usuario.get("Contraseña") == password and
+                        usuario.get("TipoUsuario") == tipo_usuario  # Comparamos el tipo de usuario
+
+                ):
+
+                    QMessageBox.information(self, 'Éxito', 'Inicio de sesión exitoso.')
+
+                    if tipo_usuario == "x5412":
+                        self.abrir_ventana2()
+                    elif tipo_usuario == "x1234":
+                        self.abrir_ventana33()
+                    break
+
+            else:
+                QMessageBox.warning(self, 'Error', 'Credenciales incorrectas.')
+        except FileNotFoundError:
+            QMessageBox.warning(self, 'Error', 'No se encontró el archivo "registros.txt".')
+        except Exception as e:
+            QMessageBox.warning(self, 'Error', f'Error al leer el archivo: {str(e)}')
 
     def abrir_ventana2(self):
             self.ventana2 = Login2()

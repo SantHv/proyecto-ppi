@@ -1,7 +1,7 @@
 import sys
 
 from PyQt5.QtGui import QFont
-from PyQt5.QtWidgets import QPushButton, QLineEdit, QMainWindow, QDesktopWidget, QLabel, QApplication
+from PyQt5.QtWidgets import QPushButton, QLineEdit, QMainWindow, QDesktopWidget, QLabel, QApplication, QMessageBox
 
 
 class registrar1(QMainWindow):
@@ -153,40 +153,85 @@ class registrar1(QMainWindow):
 
         self.lineNombre.move(67, 400)
 
+        # Hacemos el letrero
+        self.tipoUsuario = QLabel(self)
+        # Le escribimos el texto
+        self.tipoUsuario.setText("Tipo de Usuario")
+        # Le asignamos el tipo de letra
+        self.tipoUsuario.setFont(self.letra2)
+        # Le ponemos color de fondo, color de texto y margenes al letrero
+        self.tipoUsuario.setStyleSheet("background-color: #White; color: #FFFFFF; padding: 40px;")
+        self.tipoUsuario.setFixedWidth(200)
+
+        self.tipoUsuario.move(67, 440)
+
+        # Hacemos el campo para ingresar el primer numero
+        self.lineUsuario = QLineEdit(self)
+        # Definimos el ancho del campo en 200px
+        self.lineUsuario.setFixedWidth(200)
+        self.lineUsuario.setStyleSheet("background-color: White")
+        # Establecemos que solo se ingrese un numero maximo de 20 digitos
+        self.lineUsuario.setMaxLength(20)
+
+        self.lineUsuario.move(67, 480)
+
         self.botonCalcular = QPushButton(self)
         self.botonCalcular.setText("registrarse")
         self.botonCalcular.setFont(self.letra3)
         self.botonCalcular.setFixedWidth(250)
         self.botonCalcular.setFixedHeight(40)
         self.botonCalcular.setStyleSheet("background-color: #50D4FA; color: #000000  ; padding: 30px;")
-        self.botonCalcular.move(320, 500)
+        self.botonCalcular.move(320, 550)
+        self.botonCalcular.clicked.connect(self.guardar_datos)
 
-
-
-        # Hacemos un boton para hacer los calculos
         self.volverMenu = QPushButton(self)
         self.volverMenu.setText("Volver Menu")
         self.volverMenu.setFont(self.letra3)
-        # Establecemos el ancho del boton
         self.volverMenu.setFixedWidth(250)
         self.volverMenu.setFixedHeight(40)
-        # Le ponemos color de fondo, color de texto y margenes al boton
-        self.volverMenu.setStyleSheet("background-color: #50D4FA; color: #000000  ; padding: 30px;")
-        # ponemos el boton de 5 hacia abajo
-        self.volverMenu.move(50, 500)
+        self.volverMenu.setStyleSheet("background-color: #50D4FA; color: #000000  ; padding: 30px")
+        self.volverMenu.move(50, 550)
         self.volverMenu.clicked.connect(self.cerrar_ventana)
 
     def cerrar_ventana(self):
         self.close()
 
-# Este if de decision se llama si se ejecuta el archivo
-if __name__ == '__main__':
-    # creamos una aplicacion pyqt5
-    aplicacion1 = QApplication(sys.argv)
-    # creamos una ventana
-    v1 = registrar1()
-    # indicamos que la ventana se deje observar
-    v1.show()
-    # indicamos que la ventana se deje cerrar
+    def guardar_datos(self):
+        usuario = self.editLogin.text()
+        contrasena = self.editContraseña.text()
+        correo = self.lineHotmail.text()
+        nombre = self.lineNombre.text()
+        tipoUsuario = self.lineUsuario.text()
 
+        if usuario and contrasena and correo and nombre and tipoUsuario:
+            with open('registros.txt', 'a') as archivo:
+                archivo.write(f"Usuario: {usuario}\n")
+                archivo.write(f"Contraseña: {contrasena}\n")
+                archivo.write(f"Correo: {correo}\n")
+                archivo.write(f"Nombre: {nombre}\n")
+                archivo.write(f"TipoUsuario: {tipoUsuario}\n")  # Aquí está el uso de tipoUsuario
+                archivo.write("\n")
+            self.limpiar_campos()
+            self.mostrar_mensaje("Registro Exitoso", "Los datos se han registrado exitosamente.")
+        else:
+            self.mostrar_mensaje("Advertencia", "Por favor, complete todos los campos.")
+
+    def mostrar_mensaje(self, titulo, mensaje):
+        mensaje_box = QMessageBox()
+        mensaje_box.setWindowTitle(titulo)
+        mensaje_box.setText(mensaje)
+        mensaje_box.setIcon(QMessageBox.Information)
+        mensaje_box.exec_()
+
+    def limpiar_campos(self):
+        self.editLogin.clear()
+        self.editContraseña.clear()
+        self.lineHotmail.clear()
+        self.lineNombre.clear()
+        self.lineUsuario.clear()
+
+if __name__ == '__main__':
+    aplicacion1 = QApplication(sys.argv)
+    v1 = registrar1()
+    v1.show()
     sys.exit(aplicacion1.exec_())
