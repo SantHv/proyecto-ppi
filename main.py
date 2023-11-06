@@ -211,9 +211,9 @@ class Login5(QMainWindow):
 
                     QMessageBox.information(self, 'Éxito', 'Inicio de sesión exitoso.')
 
-                    if tipo_usuario == "x5412":
+                    if tipo_usuario == "Empleador":
                         self.abrir_ventana2()
-                    elif tipo_usuario == "x1234":
+                    elif tipo_usuario == "Empleado":
                         self.abrir_ventana33()
                     break
 

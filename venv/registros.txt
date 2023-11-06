@@ -119,3 +119,51 @@ Correo: j
 Nombre: j
 TipoUsuario: x5412
 
+Usuario: ss
+Contraseña: ss
+Correo: ss
+Nombre: ss
+Tipo de Usuario: Empleado
+
+Usuario: ssss
+Contraseña: ssss
+Correo: ssss
+Nombre: ssss
+Tipo de Usuario: Empleado
+
+Usuario: luci
+Contraseña: luci
+Correo: luci
+Nombre: luci
+Tipo de Usuario: Empleador
+
+Usuario: 11
+Contraseña: 11
+Correo: 11
+Nombre: 11
+Tipo de Usuario: Empleado
+
+Usuario: sssssx
+Contraseña: sssssx
+Correo: sssssx
+Nombre: sssssx
+TipoUsuario: Empleado
+
+Usuario: ss1
+Contraseña: ss1
+Correo: ss1
+Nombre: ss1
+TipoUsuario: Empleado
+
+Usuario: 11
+Contraseña: 11
+Correo: 11
+Nombre: 11
+TipoUsuario: Empleado
+
+Usuario: sss
+Contraseña: sss
+Correo: sss
+Nombre: sss
+TipoUsuario: Empleado
+

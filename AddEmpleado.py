@@ -3,7 +3,7 @@ import sys
 from PyQt5.QtCore import Qt
 from PyQt5.QtGui import QFontDatabase, QFont, QPixmap
 from PyQt5.QtWidgets import QWidget, QDesktopWidget, QVBoxLayout, QLabel, QLineEdit, QApplication, QPushButton, \
-    QMainWindow
+    QMainWindow, QComboBox
 
 
 class Addemple1(QMainWindow):
@@ -71,30 +71,27 @@ class Addemple1(QMainWindow):
         self.editLogin.setStyleSheet("background-color:White")
         # Establecemos que solo se ingrese un numero maximo de 20 digitos
         self.editLogin.setMaxLength(20)
-
         self.editLogin.move(50, 150)
 
         # Hacemos el letrero
-        self.contraseña = QLabel(self)
+        self.login = QLabel(self)
         # Le escribimos el texto
-        self.contraseña.setText("Puesto:")
+        self.login.setText("Puesto:")
         # Le asignamos el tipo de letra
-        self.contraseña.setFont(self.letra2)
+        self.login.setFont(self.letra2)
         # Le ponemos color de fondo, color de texto y margenes al letrero
-        self.contraseña.setStyleSheet("background-color: #White; color: #FFFFFF; padding: 40px;")
-        self.contraseña.setFixedWidth(200)
+        self.login.setStyleSheet("background-color: #White; color: #0000FF; padding: 40px;")
+        self.login.setFixedWidth(200)
 
-        self.contraseña.move(50, 200)
+        self.login.move(50, 200)
 
-        # Hacemos el campo para ingresar el primer numero
-        self.editContraseña = QLineEdit(self)
-        # Definimos el ancho del campo en 200px
-        self.editContraseña.setFixedWidth(300)
-        self.editContraseña.setStyleSheet("background-color:White")
-        # Establecemos que solo se ingrese un numero maximo de 20 digitos
-        self.editContraseña.setMaxLength(20)
 
-        self.editContraseña.move(50, 240)
+        # Combo box para selecionar el  tipo de empleado
+        self.employee_type_combo = QComboBox(self)
+        self.employee_type_combo.addItems(["Jardinero", "Chef", "Enfermero"])
+        self.employee_type_combo.setFixedWidth(200)
+        self.employee_type_combo.setStyleSheet("background-color:white; color black")
+        self.employee_type_combo.move(50, 240)
 
         # Hacemos un boton para hacer los calculos
         self.botonCalcular = QPushButton(self)
@@ -115,6 +112,8 @@ class Addemple1(QMainWindow):
         self.volverMenu.setStyleSheet("background-color: #50D4FA; color: #000000  ; padding: 10px;")
         self.volverMenu.move(50, 320)
         self.volverMenu.clicked.connect(self.cerrar_ventana)
+
+
 
     def cerrar_ventana(self):
         self.close()

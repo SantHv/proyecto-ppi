@@ -1,7 +1,7 @@
 import sys
 
 from PyQt5.QtGui import QFont
-from PyQt5.QtWidgets import QPushButton, QLineEdit, QMainWindow, QDesktopWidget, QLabel, QApplication, QMessageBox
+from PyQt5.QtWidgets import QPushButton,QComboBox, QLineEdit, QMainWindow, QDesktopWidget, QLabel, QApplication, QMessageBox
 
 
 class registrar1(QMainWindow):
@@ -165,15 +165,12 @@ class registrar1(QMainWindow):
 
         self.tipoUsuario.move(67, 440)
 
-        # Hacemos el campo para ingresar el primer numero
-        self.lineUsuario = QLineEdit(self)
-        # Definimos el ancho del campo en 200px
-        self.lineUsuario.setFixedWidth(200)
-        self.lineUsuario.setStyleSheet("background-color: White")
-        # Establecemos que solo se ingrese un numero maximo de 20 digitos
-        self.lineUsuario.setMaxLength(20)
-
-        self.lineUsuario.move(67, 480)
+        # Combo box para selecionar el  tipo de empleado
+        self.employee_type_combo = QComboBox(self)
+        self.employee_type_combo.addItems(["Empleado", "Empleador"])
+        self.employee_type_combo.setFixedWidth(200)
+        self.employee_type_combo.setStyleSheet("background-color:white; color black")
+        self.employee_type_combo.move(67, 480)
 
         self.botonCalcular = QPushButton(self)
         self.botonCalcular.setText("registrarse")
@@ -201,7 +198,7 @@ class registrar1(QMainWindow):
         contrasena = self.editContraseña.text()
         correo = self.lineHotmail.text()
         nombre = self.lineNombre.text()
-        tipoUsuario = self.lineUsuario.text()
+        tipoUsuario = self.employee_type_combo.currentText()  # Obtener el tipo de usuario seleccionado
 
         if usuario and contrasena and correo and nombre and tipoUsuario:
             with open('registros.txt', 'a') as archivo:
@@ -209,7 +206,7 @@ class registrar1(QMainWindow):
                 archivo.write(f"Contraseña: {contrasena}\n")
                 archivo.write(f"Correo: {correo}\n")
                 archivo.write(f"Nombre: {nombre}\n")
-                archivo.write(f"TipoUsuario: {tipoUsuario}\n")  # Aquí está el uso de tipoUsuario
+                archivo.write(f"TipoUsuario: {tipoUsuario}\n")  # Guardar el tipo de usuario
                 archivo.write("\n")
             self.limpiar_campos()
             self.mostrar_mensaje("Registro Exitoso", "Los datos se han registrado exitosamente.")
@@ -228,7 +225,7 @@ class registrar1(QMainWindow):
         self.editContraseña.clear()
         self.lineHotmail.clear()
         self.lineNombre.clear()
-        self.lineUsuario.clear()
+        self.employee_type_combo.clear()
 
 if __name__ == '__main__':
     aplicacion1 = QApplication(sys.argv)

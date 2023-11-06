@@ -1,121 +1,175 @@
 Usuario: s1
-Contraseña: s2
+Contraseï¿½a: s2
 Correo: s3
 Nombre: s4
 
 Usuario: santiago
-Contraseña: 123456
+Contraseï¿½a: 123456
 Correo: santiagohincapie5412
 Nombre: Santiago hincapie
 
 Usuario: ss
-Contraseña: ss
+Contraseï¿½a: ss
 Correo: ss
 Nombre: ss
 
 Usuario: prueba1
-Contraseña: 12345
+Contraseï¿½a: 12345
 Correo: pruebasdas
 Nombre: prueba123
 
 Usuario: 11
-Contraseña: 11
+Contraseï¿½a: 11
 Correo: 111
 Nombre: 11
 
 Usuario: prueba123
-Contraseña: prueba123
+Contraseï¿½a: prueba123
 Correo: prueba123
 Nombre: prueba123
 Tipo_Usuario: <PyQt5.QtWidgets.QLineEdit object at 0x00000215AA17B370>
 
 Usuario: prueba5412
-Contraseña: prueba5412
+Contraseï¿½a: prueba5412
 Correo: prueba5412
 Nombre: prueba5412
 Tipo_Usuario: prueba5412
 
 Usuario: prueba12345
-Contraseña: prueba12345
+Contraseï¿½a: prueba12345
 Correo: prueba12345
 Nombre: prueba12345
 Tusuario: prueba12345
 
 Usuario: 1
-Contraseña: 1
+Contraseï¿½a: 1
 Correo: 1
 Nombre: 1
 Tusuario: 11
 
 Usuario: manu
-Contraseña: manu
+Contraseï¿½a: manu
 Correo: manu
 Nombre: manu
 Tusuario: manu
 
 Usuario: manu
-Contraseña: manu
+Contraseï¿½a: manu
 Correo: manu
 Nombre: manu
 Tusuario: manu
 
 Usuario: manu1
-Contraseña: manu1
+Contraseï¿½a: manu1
 Correo: manu1
 Nombre: manu1
 Tipousuario: manu1
 
 Usuario: x
-Contraseña: x
+Contraseï¿½a: x
 Correo: x
 Nombre: x
 Tipousuario: x
 
 Usuario: XX
-Contraseña: XX
+Contraseï¿½a: XX
 Correo: XX
 Nombre: XX
 Tipousuario: XX
 
 Usuario: santi11
-Contraseña: santi11
+Contraseï¿½a: santi11
 Correo: santi11
 Nombre: santi11
 Tipousuario: x5412
 
 Usuario: pruebasd123
-Contraseña: pruebasd123
+Contraseï¿½a: pruebasd123
 Correo: pruebasd123
 Nombre: pruebasd123
 Tipousuario: x5412
 
 Usuario: 333
-Contraseña: 333
+Contraseï¿½a: 333
 Correo: 333
 Nombre: 333
 TipoUsuario: 333
 
 Usuario: ss
-Contraseña: ss
+Contraseï¿½a: ss
 Correo: ss
 Nombre: ss
 TipoUsuario: x5412
 
 Usuario: 3017
-Contraseña: 3017
+Contraseï¿½a: 3017
 Correo: 3017
 Nombre: 3017
 TipoUsuario: x1234
 
 Usuario: 777
-Contraseña: 777
+Contraseï¿½a: 777
 Correo: 777
 Nombre: 777
 TipoUsuario: x1234
 
 Usuario: j
-Contraseña: j
+Contraseï¿½a: j
 Correo: j
 Nombre: j
 TipoUsuario: x5412
+
+Usuario: 55
+Contraseï¿½a: 55
+Correo: 55
+Nombre: 55
+TipoUsuario: x5412
+
+Usuario: 1111
+Contraseï¿½a: 1111
+Correo: 1111
+Nombre: 1111
+TipoUsuario: x5412
+
+Usuario: santiago
+Contraseï¿½a: santiago
+Correo: 1
+Nombre: 1
+TipoUsuario: x5412
+
+Usuario: 4
+Contraseï¿½a: 4
+Correo: 4
+Nombre: 4
+TipoUsuario: x1234
+
+Usuario: 0000
+Contraseï¿½a: 0000
+Correo: 0000
+Nombre: 0000
+TipoUsuario: Empleado
+
+Usuario: ssss1
+Contraseña: ssss1
+Correo: ssss1
+Nombre: ssss1
+TipoUsuario: Empleador
+
+Usuario: x1
+Contraseña: x1
+Correo: x1
+Nombre: x1
+TipoUsuario: Empleado
+
+Usuario: sss
+Contraseña: sss
+Correo: sss
+Nombre: sss
+TipoUsuario: Empleado
+
+Usuario: ssss
+Contraseña: ssss
+Correo: ssss
+Nombre: ssss
+TipoUsuario: Empleador
 
