@@ -1,27 +1,22 @@
 import sys
 
-from PyQt5.QtCore import Qt
-from PyQt5.QtGui import QFontDatabase, QFont, QPixmap
-from PyQt5.QtWidgets import QWidget, QDesktopWidget, QVBoxLayout, QLabel, QLineEdit, QApplication, QPushButton, \
-    QMainWindow, QMessageBox, QCheckBox
-from ventana2 import Login2
-from ventana3 import Login3
-from registrar import registrar1
+from PyQt5.QtGui import QFont
+from PyQt5.QtWidgets import QPushButton,QComboBox, QLineEdit, QMainWindow, QDesktopWidget, QLabel, QApplication, QMessageBox
+import re
 
-class Login5(QMainWindow):
+class registrar1(QMainWindow):
     # Hacer el metodo de construccion de la ventana
     def __init__(self):
-        super(Login5,self).__init__()
+        super(registrar1,self).__init__()
 
+        self.setWindowTitle("Registro")
 
-        self.setWindowTitle("Login de usuario")
-
+        # Poner el color  de fondo a la ventana
         self.setStyleSheet("background-color: #C5F9E8;")
 
-
         # Estableciendo las propiedades de ancho y alto
-        self.ancho = 900
-        self.alto = 600
+        self.ancho = 600
+        self.alto = 800
 
         # Establecer el tamaño de la ventana:
         self.resize(self.ancho, self.alto)
@@ -46,31 +41,28 @@ class Login5(QMainWindow):
         # Le asignamos el tamaño
         self.letra1.setPointSize(18)
 
-        self.logo_label = QLabel(self)
-        pixmap = QPixmap("imagenes/logo111.png")
-        self.logo_label.setPixmap(pixmap)
-        self.logo_label.setAlignment(Qt.AlignCenter)
-        self.logo_label.setFixedSize(pixmap.size())  # Use the size of the pixmap
-        self.logo_label.move(450, 220)  # Adjust the position as needed
-
+        self.letra3 = QFont()
+        self.letra3.setFamily("Arial")
+        self.letra3.setPointSize(12)
         # Hacemos el tipo de letra
         self.letra2 = QFont()
         # Le asignamos el tipo de letra descargado
         self.letra2.setFamily("Arial")
         # Le asignamos el tamaño
-        self.letra2.setPointSize(16)
+        self.letra2.setPointSize(12)
 
         # Hacemos el letrero
         self.letrero1 = QLabel(self)
         # Le escribimos el texto
-        self.letrero1.setText("Domestic Space")
+        self.letrero1.setText("Registro")
         # Le asignamos el tipo de letra
         self.letrero1.setFont(self.letra1)
         # Le ponemos color de fondo, color de texto y margenes al letrero
-        self.letrero1.setStyleSheet("background-color: #C5F9E8 ; color: #09B4AC; padding: 50px;")
-        self.letrero1.setFixedWidth(500)
+        self.letrero1.setStyleSheet("background-color:#C5F9E8  ; color: #000000; padding: 40px;")
+        self.letrero1.setFixedWidth(400)
+        self.letrero1.setFixedHeight(40)
 
-        self.letrero1.move(300, 30)
+        self.letrero1.move(20, 40)
 
         # Hacemos el letrero
         self.login = QLabel(self)
@@ -80,23 +72,19 @@ class Login5(QMainWindow):
         self.login.setFont(self.letra2)
         # Le ponemos color de fondo, color de texto y margenes al letrero
         self.login.setStyleSheet("background-color: #White; color: #0000FF; padding: 40px;")
-        self.login.setFixedWidth(250)
-        self.login.move(305,100)
+        self.login.setFixedWidth(200)
 
-
-
-
-
+        self.login.move(67, 120)
 
         # Hacemos el campo para ingresar el primer numero
         self.editLogin = QLineEdit(self)
         # Definimos el ancho del campo en 200px
-        self.editLogin.setFixedWidth(250)
+        self.editLogin.setFixedWidth(200)
+        self.editLogin.setStyleSheet("background-color: White")
         # Establecemos que solo se ingrese un numero maximo de 20 digitos
         self.editLogin.setMaxLength(20)
-        self.editLogin.setStyleSheet("background-color: white")
 
-        self.editLogin.move(305, 160)
+        self.editLogin.move(67, 160)
 
         # Hacemos el letrero
         self.contraseña = QLabel(self)
@@ -108,17 +96,62 @@ class Login5(QMainWindow):
         self.contraseña.setStyleSheet("background-color: #White; color: #FFFFFF; padding: 40px;")
         self.contraseña.setFixedWidth(200)
 
-        self.contraseña.move(305, 200)
+        self.contraseña.move(67, 200)
 
         # Hacemos el campo para ingresar el primer numero
         self.editContraseña = QLineEdit(self)
         # Definimos el ancho del campo en 200px
-        self.editContraseña.setFixedWidth(250)
-        self.editContraseña.setStyleSheet("background-color: white")
+        self.editContraseña.setFixedWidth(200)
+        self.editContraseña.setStyleSheet("background-color: White")
         # Establecemos que solo se ingrese un numero maximo de 20 digitos
         self.editContraseña.setMaxLength(20)
-        self.editContraseña.setEchoMode(QLineEdit.Password)
-        self.editContraseña.move(305, 240)
+
+        self.editContraseña.move(67, 240)
+
+
+        # Hacemos el letrero
+        self.hotmail = QLabel(self)
+        # Le escribimos el texto
+        self.hotmail.setText("Correo")
+        # Le asignamos el tipo de letra
+        self.hotmail.setFont(self.letra2)
+        # Le ponemos color de fondo, color de texto y margenes al letrero
+        self.hotmail.setStyleSheet("background-color: #White; color: #FFFFFF; padding: 40px;")
+        self.hotmail.setFixedWidth(200)
+
+        self.hotmail.move(67, 280)
+
+        # Hacemos el campo para ingresar el primer numero
+        self.lineHotmail = QLineEdit(self)
+        # Definimos el ancho del campo en 200px
+        self.lineHotmail.setStyleSheet("background-color: White")
+        self.lineHotmail.setFixedWidth(200)
+        # Establecemos que solo se ingrese un numero maximo de 20 digitos
+        self.lineHotmail.setMaxLength(20)
+
+        self.lineHotmail.move(67, 320)
+
+        # Hacemos el letrero
+        self.nombre = QLabel(self)
+        # Le escribimos el texto
+        self.nombre.setText("Nombre")
+        # Le asignamos el tipo de letra
+        self.nombre.setFont(self.letra2)
+        # Le ponemos color de fondo, color de texto y margenes al letrero
+        self.nombre.setStyleSheet("background-color: #White; color: #FFFFFF; padding: 40px;")
+        self.nombre.setFixedWidth(200)
+
+        self.nombre.move(67, 360)
+
+        # Hacemos el campo para ingresar el primer numero
+        self.lineNombre = QLineEdit(self)
+        # Definimos el ancho del campo en 200px
+        self.lineNombre.setFixedWidth(200)
+        self.lineNombre.setStyleSheet("background-color: White")
+        # Establecemos que solo se ingrese un numero maximo de 20 digitos
+        self.lineNombre.setMaxLength(20)
+
+        self.lineNombre.move(67, 400)
 
         # Hacemos el letrero
         self.tipoUsuario = QLabel(self)
@@ -129,127 +162,78 @@ class Login5(QMainWindow):
         # Le ponemos color de fondo, color de texto y margenes al letrero
         self.tipoUsuario.setStyleSheet("background-color: #White; color: #FFFFFF; padding: 40px;")
         self.tipoUsuario.setFixedWidth(200)
-        self.tipoUsuario.move(305,280)
 
-        # Hacemos el campo para ingresar el primer numero
-        self.editUsuario = QLineEdit(self)
-        # Definimos el ancho del campo en 200px
-        self.editUsuario.setFixedWidth(250)
-        self.editUsuario.setStyleSheet("background-color: white")
-        # Establecemos que solo se ingrese un numero maximo de 20 digitos
-        self.editUsuario.setMaxLength(20)
+        self.tipoUsuario.move(67, 440)
 
-        self.editUsuario.move(305, 320)
+        # Combo box para selecionar el  tipo de empleado
+        self.employee_type_combo = QComboBox(self)
+        self.employee_type_combo.addItems(["Empleado", "Empleador"])
+        self.employee_type_combo.setFixedWidth(200)
+        self.employee_type_combo.setStyleSheet("background-color:white; color black")
+        self.employee_type_combo.move(67, 480)
 
         self.botonCalcular = QPushButton(self)
-        self.botonCalcular.setText("Iniciar Sesión")
-        self.botonCalcular.setFixedWidth(200)
-        self.botonCalcular.setStyleSheet("background-color: #50D4FA; color: #000000  ; padding: 30px;")
-        self.botonCalcular.move(325, 450)
+        self.botonCalcular.setText("registrarse")
+        self.botonCalcular.setFont(self.letra3)
+        self.botonCalcular.setFixedWidth(250)
         self.botonCalcular.setFixedHeight(40)
+        self.botonCalcular.setStyleSheet("background-color: #50D4FA; color: #000000  ; padding: 30px;")
+        self.botonCalcular.move(320, 550)
+        self.botonCalcular.clicked.connect(self.guardar_datos)
 
-        self.botonRegistrar = QPushButton(self)
-        self.botonRegistrar.setText("Registrarse")
-        self.botonRegistrar.setFixedWidth(200)
-        self.botonRegistrar.setStyleSheet("background-color: #50D4FA; color: #000000  ; padding: 30px;")
-        self.botonRegistrar.move(325, 500)
-        self.botonRegistrar.setFixedHeight(40)
+        self.volverMenu = QPushButton(self)
+        self.volverMenu.setText("Volver Menu")
+        self.volverMenu.setFont(self.letra3)
+        self.volverMenu.setFixedWidth(250)
+        self.volverMenu.setFixedHeight(40)
+        self.volverMenu.setStyleSheet("background-color: #50D4FA; color: #000000  ; padding: 30px")
+        self.volverMenu.move(50, 550)
+        self.volverMenu.clicked.connect(self.cerrar_ventana)
 
-        # Create a checkbox for toggling password visibility
-        self.mostrar_contraseña_checkbox = QCheckBox("Mostrar Contraseña", self)
-        self.mostrar_contraseña_checkbox.move(570, 240)
-        self.mostrar_contraseña_checkbox.setFixedWidth(200)
-        self.mostrar_contraseña_checkbox.stateChanged.connect(self.toggle_password_visibility)
+    def cerrar_ventana(self):
+        self.close()
 
+    def guardar_datos(self):
+        usuario = self.editLogin.text()
+        contrasena = self.editContraseña.text()
+        correo = self.lineHotmail.text()
+        nombre = self.lineNombre.text()
+        tipoUsuario = self.employee_type_combo.currentText()  # Obtener el tipo de usuario seleccionado
 
-        # Conectamos el botón a la función que verifica las credenciales
-        self.botonCalcular.clicked.connect(self.check_login)
+        # Verificar si el correo tiene un formato válido
+        if not re.match(r"[^@]+@[^@]+\.[^@]+", correo):
+            self.mostrar_mensaje("Advertencia", "Por favor, ingrese un correo válido.")
+            return
 
-        # Conectamos el botón a la función que verifica las credenciales
-        self.botonRegistrar.clicked.connect(self.abrir_registrar)
-    def abrir_registrar(self):
-        self.boton_Registrar = registrar1()
-        self.boton_Registrar.show()
-
-    def check_login(self):
-        # Obtenemos el nombre de usuario y contraseña ingresados
-        username = self.editLogin.text()
-        password = self.editContraseña.text()
-        tipo_usuario = self.editUsuario.text()  # Corrige esto para obtener el valor correcto
-
-        # Intentamos abrir el archivo "registros.txt" en modo lectura
-        try:
-            with open('registros.txt', 'r') as archivo:
-                # Leemos el contenido del archivo línea por línea
-                lineas = archivo.readlines()
-
-            # Creamos una lista de diccionarios para almacenar los datos de usuarios
-            usuarios = []
-            usuario_actual = {}
-            for linea in lineas:
-                linea = linea.strip()  # Eliminamos espacios en blanco y saltos de línea
-                if linea:
-                    clave, valor = linea.split(': ')
-                    usuario_actual[clave] = valor
-                else:
-                    usuarios.append(usuario_actual)
-                    usuario_actual = {}
-
-            # Buscamos si las credenciales coinciden con algún usuario
-            for usuario in usuarios:
-                if (
-                        usuario.get("Usuario") == username and
-                        usuario.get("Contraseña") == password and
-                        usuario.get("TipoUsuario") == tipo_usuario  # Comparamos el tipo de usuario
-
-                ):
-
-                    QMessageBox.information(self, 'Éxito', 'Inicio de sesión exitoso.')
-
-                    if tipo_usuario == "x5412":
-                        self.abrir_ventana2()
-                    elif tipo_usuario == "x1234":
-                        self.abrir_ventana33()
-                    break
-
-            else:
-                QMessageBox.warning(self, 'Error', 'Credenciales incorrectas.')
-        except FileNotFoundError:
-            QMessageBox.warning(self, 'Error', 'No se encontró el archivo "registros.txt".')
-        except Exception as e:
-            QMessageBox.warning(self, 'Error', f'Error al leer el archivo: {str(e)}')
-
-    def abrir_ventana2(self):
-            self.ventana2 = Login2()
-            self.ventana2.show()
-            self.hide()
-
-    def abrir_ventana33(self):
-            self.ventana33 = Login3()
-            self.ventana33.show()
-            self.hide()
-    def toggle_password_visibility(self, state):
-        if state == Qt.Checked:
-            self.editContraseña.setEchoMode(QLineEdit.Normal)
+        if usuario and contrasena and correo and nombre and tipoUsuario:
+            with open('registros.txt', 'a') as archivo:
+                archivo.write(f"Usuario: {usuario}\n")
+                archivo.write(f"Contraseña: {contrasena}\n")
+                archivo.write(f"Correo: {correo}\n")
+                archivo.write(f"Nombre: {nombre}\n")
+                archivo.write(f"TipoUsuario: {tipoUsuario}\n")  # Guardar el tipo de usuario
+                archivo.write("\n")
+            self.limpiar_campos()
+            self.mostrar_mensaje("Registro Exitoso", "Los datos se han registrado exitosamente.")
         else:
-            self.editContraseña.setEchoMode(QLineEdit.Password)
+            self.mostrar_mensaje("Advertencia", "Por favor, complete todos los campos.")
 
+    def mostrar_mensaje(self, titulo, mensaje):
+        mensaje_box = QMessageBox()
+        mensaje_box.setWindowTitle(titulo)
+        mensaje_box.setText(mensaje)
+        mensaje_box.setIcon(QMessageBox.Information)
+        mensaje_box.exec_()
 
+    def limpiar_campos(self):
+        self.editLogin.clear()
+        self.editContraseña.clear()
+        self.lineHotmail.clear()
+        self.lineNombre.clear()
+        self.employee_type_combo.clear()
 
-
-
-
-
-
-
-# Este if de decision se llama si se ejecuta el archivo
 if __name__ == '__main__':
-    # creamos una aplicacion pyqt5
     aplicacion1 = QApplication(sys.argv)
-    # creamos una ventana
-    v1 = Login5()
-    # indicamos que la ventana se deje observar
+    v1 = registrar1()
     v1.show()
-    # indicamos que la ventana se deje cerrar
-
     sys.exit(aplicacion1.exec_())

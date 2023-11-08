@@ -173,3 +173,27 @@ Correo: ssss
 Nombre: ssss
 TipoUsuario: Empleador
 
+Usuario: santiago1
+Contraseña: santiago1
+Correo: santiago1@gmail.com
+Nombre: santiago1
+TipoUsuario: Empleador
+
+Usuario: 1111
+Contraseña: 1111
+Correo: 1111
+Nombre: 1111
+TipoUsuario: Empleado
+
+Usuario: lll1
+Contraseña: lll1
+Correo: lll1@hotmail.com
+Nombre: lll1
+TipoUsuario: Empleado
+
+Usuario: xada11
+Contraseña: xada11
+Correo: xada11@hotmail.com
+Nombre: xada11
+TipoUsuario: Empleador
+

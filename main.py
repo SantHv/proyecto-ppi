@@ -4,7 +4,7 @@ import sys
 from PyQt5.QtCore import Qt
 from PyQt5.QtGui import QFontDatabase, QFont, QPixmap
 from PyQt5.QtWidgets import QWidget, QDesktopWidget, QVBoxLayout, QLabel, QLineEdit, QApplication, QPushButton, \
-    QMainWindow, QMessageBox, QCheckBox
+    QMainWindow, QMessageBox, QCheckBox, QComboBox
 from ventana2 import Login2
 from ventana3 import Login3
 from registrar import registrar1
@@ -15,7 +15,7 @@ class Login5(QMainWindow):
         super(Login5,self).__init__()
 
 
-        self.setWindowTitle("Login de usuario")
+        self.setWindowTitle("Inicio de sesion")
 
         self.setStyleSheet("background-color: #C5F9E8;")
 
@@ -121,26 +121,19 @@ class Login5(QMainWindow):
         self.editContraseña.setEchoMode(QLineEdit.Password)
         self.editContraseña.move(305, 240)
 
-        # Hacemos el letrero
         self.tipoUsuario = QLabel(self)
-        # Le escribimos el texto
         self.tipoUsuario.setText("Tipo de Usuario")
-        # Le asignamos el tipo de letra
         self.tipoUsuario.setFont(self.letra2)
-        # Le ponemos color de fondo, color de texto y margenes al letrero
         self.tipoUsuario.setStyleSheet("background-color: #White; color: #FFFFFF; padding: 40px;")
         self.tipoUsuario.setFixedWidth(200)
-        self.tipoUsuario.move(305,280)
+        self.tipoUsuario.move(305, 280)
 
-        # Hacemos el campo para ingresar el primer numero
-        self.editUsuario = QLineEdit(self)
-        # Definimos el ancho del campo en 200px
-        self.editUsuario.setFixedWidth(250)
-        self.editUsuario.setStyleSheet("background-color: white")
-        # Establecemos que solo se ingrese un numero maximo de 20 digitos
-        self.editUsuario.setMaxLength(20)
-
-        self.editUsuario.move(305, 320)
+        # Combo box para seleccionar el tipo de usuario
+        self.user_type_combo = QComboBox(self)
+        self.user_type_combo.addItems(["Empleado", "Empleador"])
+        self.user_type_combo.setStyleSheet("background-color: White; color: black")
+        self.user_type_combo.setFixedWidth(250)
+        self.user_type_combo.move(305, 320)
 
         self.botonCalcular = QPushButton(self)
         self.botonCalcular.setText("Iniciar Sesión")
@@ -176,7 +169,7 @@ class Login5(QMainWindow):
         # Obtenemos el nombre de usuario y contraseña ingresados
         username = self.editLogin.text()
         password = self.editContraseña.text()
-        tipo_usuario = self.editUsuario.text()  # Corrige esto para obtener el valor correcto
+        tipo_usuario = self.user_type_combo.currentText()  # Corrige esto para obtener el valor correcto
         # Obtenemos la ruta del directorio del script actual
         script_dir = os.path.dirname(os.path.abspath(__file__))
 

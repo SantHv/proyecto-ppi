@@ -167,3 +167,15 @@ Correo: sss
 Nombre: sss
 TipoUsuario: Empleado
 
+Usuario: sssss11
+Contraseña: sssss11
+Correo: sssss11@gmail.com
+Nombre: sssss11
+TipoUsuario: Empleado
+
+Usuario: sdsdsds
+Contraseña: sdsdsds
+Correo: sdsdsds@hotmail.com
+Nombre: sdsdsds
+TipoUsuario: Empleado
+

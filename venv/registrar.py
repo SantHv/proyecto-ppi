@@ -2,7 +2,7 @@ import sys
 
 from PyQt5.QtGui import QFont
 from PyQt5.QtWidgets import QPushButton,QComboBox, QLineEdit, QMainWindow, QDesktopWidget, QLabel, QApplication, QMessageBox
-
+import re
 
 class registrar1(QMainWindow):
     # Hacer el metodo de construccion de la ventana
@@ -199,6 +199,11 @@ class registrar1(QMainWindow):
         correo = self.lineHotmail.text()
         nombre = self.lineNombre.text()
         tipoUsuario = self.employee_type_combo.currentText()  # Obtener el tipo de usuario seleccionado
+
+        # Verificar si el correo tiene un formato válido
+        if not re.match(r"[^@]+@[^@]+\.[^@]+", correo):
+            self.mostrar_mensaje("Advertencia", "Por favor, ingrese un correo válido.")
+            return
 
         if usuario and contrasena and correo and nombre and tipoUsuario:
             with open('registros.txt', 'a') as archivo:
