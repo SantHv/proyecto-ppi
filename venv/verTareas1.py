@@ -1,6 +1,7 @@
 import sys
 from PyQt5.QtCore import Qt
-from PyQt5.QtGui import QFont
+from PyQt5.QtGui import QFont, QPixmap
+from PyQt5 import QtGui
 from PyQt5.QtWidgets import QApplication, QMainWindow, QPushButton, QLabel, QTextEdit
 
 # Importa tus otras clases
@@ -13,7 +14,7 @@ class VerTareas(QMainWindow):
         super(VerTareas, self).__init__()
 
         self.setWindowTitle("Tareas")
-        self.setStyleSheet("background-color: #C5F9E8;")
+        self.setWindowIcon(QtGui.QIcon("imagenes/icono1.png"))
         self.ancho = 800
         self.alto = 600
         self.resize(self.ancho, self.alto)
@@ -26,7 +27,9 @@ class VerTareas(QMainWindow):
 
         self.setFixedWidth(self.ancho)
         self.setFixedHeight(self.alto)
-        self.setStyleSheet("background-color: #C5F9E8;")
+
+        # Llamamos al método para establecer la imagen de fondo
+        self.set_background_image("imagenes/fnd2e.png")
 
         # Fuente para letreros y botones
         fuente = QFont()
@@ -41,13 +44,14 @@ class VerTareas(QMainWindow):
         letrero1 = QLabel(self)
         letrero1.setText("Ver Tareas")
         letrero1.setFont(fuente)
-        letrero1.setStyleSheet("background-color: #C5F9E8; color: #09B4AC; padding: 30px;")
+        letrero1.setStyleSheet("color: black; padding: 30px;")
         letrero1.setFixedWidth(400)
         letrero1.move(300, 40)
 
         # Área de texto para mostrar el historial
         self.textoHistorial = QTextEdit(self)
         self.textoHistorial.setPlaceholderText("Aquí se mostrará las tareas.")
+
         self.textoHistorial.setReadOnly(True)
         self.textoHistorial.setGeometry(100, 100, 600, 400)
 
@@ -60,6 +64,18 @@ class VerTareas(QMainWindow):
         self.volverMenu.setStyleSheet("background-color: #50D4FA; color: #000000  ; padding: 30px;")
         self.volverMenu.move(325, 520)
         self.volverMenu.clicked.connect(self.cerrar_ventana)
+
+    def set_background_image(self, image_path):
+        # Load the background image
+        background_image = QPixmap(image_path).scaled(self.ancho, self.alto)
+
+        # Create a QLabel for the background image
+        background_label = QLabel(self)
+        background_label.setPixmap(background_image)
+        background_label.setGeometry(0, 0, self.ancho, self.alto)
+
+        # Set the background image to be in the back of all other widgets
+        background_label.lower()
 
     def cerrar_ventana(self):
         self.close()

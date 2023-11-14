@@ -197,3 +197,15 @@ Correo: xada11@hotmail.com
 Nombre: xada11
 TipoUsuario: Empleador
 
+Usuario: x111
+Contraseña: 1234
+Correo: sdsd@gmail.com
+Nombre: sds
+TipoUsuario: Empleado
+
+Usuario: x1111
+Contraseña: 5412
+Correo: sdaadj@gmail.com
+Nombre: santiago
+TipoUsuario: Empleador
+

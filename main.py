@@ -1,6 +1,7 @@
 import os
 import sys
 
+from PyQt5 import QtGui
 from PyQt5.QtCore import Qt
 from PyQt5.QtGui import QFontDatabase, QFont, QPixmap
 from PyQt5.QtWidgets import QWidget, QDesktopWidget, QVBoxLayout, QLabel, QLineEdit, QApplication, QPushButton, \
@@ -16,16 +17,22 @@ class Login5(QMainWindow):
 
 
         self.setWindowTitle("Inicio de sesion")
+        self.setWindowIcon(QtGui.QIcon("imagenes/icono1.png"))
 
-        self.setStyleSheet("background-color: #C5F9E8;")
+
+
 
 
         # Estableciendo las propiedades de ancho y alto
         self.ancho = 900
         self.alto = 600
 
+
         # Establecer el tamaño de la ventana:
         self.resize(self.ancho, self.alto)
+
+
+
 
         # Estas lineas hacen que la ventana se vea en el centro:
         self.pantalla = self.frameGeometry()
@@ -38,8 +45,8 @@ class Login5(QMainWindow):
         self.setFixedWidth(self.ancho)
         self.setFixedHeight(self.alto)
 
-
-
+        # Set the background image
+        self.set_background_image("imagenes/fnd1.png")
         # Hacemos el tipo de letra
         self.letra1 = QFont()
         # Le asignamos el tipo de letra descargado
@@ -48,11 +55,11 @@ class Login5(QMainWindow):
         self.letra1.setPointSize(18)
 
         self.logo_label = QLabel(self)
-        pixmap = QPixmap("imagenes/logo111.png")
+        pixmap = QPixmap("imagenes/DOM1.png")
         self.logo_label.setPixmap(pixmap)
         self.logo_label.setAlignment(Qt.AlignCenter)
         self.logo_label.setFixedSize(pixmap.size())  # Use the size of the pixmap
-        self.logo_label.move(450, 220)  # Adjust the position as needed
+        self.logo_label.move(485, 220)  # Adjust the position as needed
 
         # Hacemos el tipo de letra
         self.letra2 = QFont()
@@ -68,10 +75,10 @@ class Login5(QMainWindow):
         # Le asignamos el tipo de letra
         self.letrero1.setFont(self.letra1)
         # Le ponemos color de fondo, color de texto y margenes al letrero
-        self.letrero1.setStyleSheet("background-color: #C5F9E8 ; color: #09B4AC; padding: 50px;")
+        self.letrero1.setStyleSheet("background-color:color: #09B4AC; padding: 50px;")
         self.letrero1.setFixedWidth(500)
 
-        self.letrero1.move(300, 30)
+        self.letrero1.move(340, 30)
 
         # Hacemos el letrero
         self.login = QLabel(self)
@@ -164,6 +171,18 @@ class Login5(QMainWindow):
     def abrir_registrar(self):
         self.boton_Registrar = registrar1()
         self.boton_Registrar.show()
+
+    def set_background_image(self, image_path):
+        # Load the background image
+        background_image = QPixmap(image_path).scaled(self.ancho, self.alto)
+
+        # Create a QLabel for the background image
+        background_label = QLabel(self)
+        background_label.setPixmap(background_image)
+        background_label.setGeometry(0, 0, self.ancho, self.alto)
+
+        # Set the background image to be in the back of all other widgets
+        background_label.lower()
 
     def check_login(self):
         # Obtenemos el nombre de usuario y contraseña ingresados

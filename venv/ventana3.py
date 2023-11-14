@@ -5,6 +5,7 @@ from PyQt5.QtGui import QFontDatabase, QFont, QPixmap
 from PyQt5.QtWidgets import QWidget, QDesktopWidget, QVBoxLayout, QLabel, QLineEdit, QApplication, QPushButton, \
     QMainWindow
 from historytareas import HistorialTareas
+from PyQt5 import QtGui
 from reportTask import ReportarTarea
 from verTareas1 import VerTareas
 
@@ -17,7 +18,8 @@ class Login3(QMainWindow):
         self.setWindowTitle("Empleado")
 
         # Poner el color  de fondo a la ventana
-        self.setStyleSheet("background-color: #C5F9E8;")
+
+        self.setWindowIcon(QtGui.QIcon("imagenes/icono1.png"))
 
         # Estableciendo las propiedades de ancho y alto
         self.ancho = 1000
@@ -36,6 +38,7 @@ class Login3(QMainWindow):
         # Se fija el ancho y el alto
         self.setFixedWidth(self.ancho)
         self.setFixedHeight(self.alto)
+        self.set_background_image("imagenes/fnd2e.png")
 
 
 
@@ -60,7 +63,7 @@ class Login3(QMainWindow):
         # Le asignamos el tipo de letra
         self.letrero1.setFont(self.letra1)
         # Le ponemos color de fondo, color de texto y margenes al letrero
-        self.letrero1.setStyleSheet("background-color: #C5F9E8 ; color: #09B4AC; padding: 30px;")
+        self.letrero1.setStyleSheet("color: black; padding: 30px;")
         self.letrero1.setFixedWidth(350)
 
 
@@ -103,7 +106,17 @@ class Login3(QMainWindow):
         # ponemos el boton de 5 hacia abajo
         self.historyTask.move(560, 200)
         self.historyTask.clicked.connect(self.abrir_ventana_history_task)
+    def set_background_image(self, image_path):
+        # Load the background image
+        background_image = QPixmap(image_path).scaled(self.ancho, self.alto)
 
+        # Create a QLabel for the background image
+        background_label = QLabel(self)
+        background_label.setPixmap(background_image)
+        background_label.setGeometry(0, 0, self.ancho, self.alto)
+
+        # Set the background image to be in the back of all other widgets
+        background_label.lower()
     def abrir_ventana_history_task(self):
         self.ventana_history_task = HistorialTareas()
         self.ventana_history_task.show()

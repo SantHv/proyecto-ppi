@@ -2,6 +2,7 @@ import sys
 
 from PyQt5.QtCore import Qt
 from PyQt5.QtGui import QFontDatabase, QFont, QPixmap
+from PyQt5 import QtGui
 from PyQt5.QtWidgets import QWidget, QDesktopWidget, QVBoxLayout, QLabel, QLineEdit, QApplication, QPushButton, \
     QMainWindow
 
@@ -14,11 +15,12 @@ class addtarea11(QMainWindow):
         self.setWindowTitle("Agregar Tarea")
 
         # Poner el color  de fondo a la ventana
-        self.setStyleSheet("background-color: #C5F9E8;")
+
 
         # Estableciendo las propiedades de ancho y alto
         self.ancho = 500
         self.alto = 500
+        self.setWindowIcon(QtGui.QIcon("imagenes/icono1.png"))
 
         # Establecer el tamaño de la ventana:
         self.resize(self.ancho, self.alto)
@@ -34,14 +36,15 @@ class addtarea11(QMainWindow):
         self.setFixedWidth(self.ancho)
         self.setFixedHeight(self.alto)
 
-        self.setStyleSheet("background-color: #C5F9E8;")
+        # Llamamos al método para establecer la imagen de fondo
+        self.set_background_image("imagenes/fnd2e.png")
 
         # Hacemos el tipo de letra
         self.letra1 = QFont()
         # Le asignamos el tipo de letra descargado
         self.letra1.setFamily("Arial")
         # Le asignamos el tamaño
-        self.letra1.setPointSize(10)
+        self.letra1.setPointSize(12)
 
         # Hacemos el tipo de letra
         self.letra2 = QFont()
@@ -57,7 +60,7 @@ class addtarea11(QMainWindow):
         # Le asignamos el tipo de letra
         self.letrero1.setFont(self.letra1)
         # Le ponemos color de fondo, color de texto y margenes al letrero
-        self.letrero1.setStyleSheet("background-color: #C5F9E8 ; color: black; padding: 30px;")
+        self.letrero1.setStyleSheet("color: black; padding: 30px;")
         self.letrero1.setFixedWidth(250)
 
         self.letrero1.move(0, 20)
@@ -143,6 +146,18 @@ class addtarea11(QMainWindow):
 
     def cerrar_ventana(self):
             self.close()
+
+    def set_background_image(self, image_path):
+        # Load the background image
+        background_image = QPixmap(image_path).scaled(self.ancho, self.alto)
+
+        # Create a QLabel for the background image
+        background_label = QLabel(self)
+        background_label.setPixmap(background_image)
+        background_label.setGeometry(0, 0, self.ancho, self.alto)
+
+        # Set the background image to be in the back of all other widgets
+        background_label.lower()
 
 
 

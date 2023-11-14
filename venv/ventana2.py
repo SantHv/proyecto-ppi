@@ -1,6 +1,7 @@
 import sys
 from PyQt5.QtCore import Qt
-from PyQt5.QtGui import QFont
+from PyQt5.QtGui import QFont, QPixmap
+from PyQt5 import QtGui
 from PyQt5.QtWidgets import QApplication, QMainWindow, QPushButton, QLabel
 
 # Importa tus otras clases
@@ -14,7 +15,8 @@ class Login2(QMainWindow):
         super(Login2, self).__init__()
 
         self.setWindowTitle("Empleador")
-        self.setStyleSheet("background-color: #C5F9E8;")
+
+        self.setWindowIcon(QtGui.QIcon("imagenes/icono1.png"))
         self.ancho = 1200
         self.alto = 600
         self.resize(self.ancho, self.alto)
@@ -27,7 +29,7 @@ class Login2(QMainWindow):
 
         self.setFixedWidth(self.ancho)
         self.setFixedHeight(self.alto)
-
+        self.set_background_image("imagenes/fnd2e.png")
 
         # Fuente para letreros y botones
         fuente = QFont()
@@ -42,7 +44,7 @@ class Login2(QMainWindow):
         letrero1 = QLabel(self)
         letrero1.setText("Menu Empleador")
         letrero1.setFont(fuente)
-        letrero1.setStyleSheet("background-color: #C5F9E8; color: #09B4AC; padding: 30px;")
+        letrero1.setStyleSheet("color: Black; padding: 30px;")
         letrero1.setFixedWidth(300)
         letrero1.move(450, 40)
 
@@ -85,6 +87,17 @@ class Login2(QMainWindow):
         self.addEmpleado.setStyleSheet("background-color: #50D4FA; color: #000000; padding: 30px;")
         self.addEmpleado.move(220, 200)
         self.addEmpleado.clicked.connect(self.abrir_ventana_add_empleado)
+    def set_background_image(self, image_path):
+        # Load the background image
+        background_image = QPixmap(image_path).scaled(self.ancho, self.alto)
+
+        # Create a QLabel for the background image
+        background_label = QLabel(self)
+        background_label.setPixmap(background_image)
+        background_label.setGeometry(0, 0, self.ancho, self.alto)
+
+        # Set the background image to be in the back of all other widgets
+        background_label.lower()
 
     def abrir_ventana_add_tarea(self):
         self.ventana_add_tarea = addtarea11()

@@ -1,5 +1,6 @@
 import sys
 
+from PyQt5 import QtGui
 from PyQt5.QtCore import Qt
 from PyQt5.QtGui import QFontDatabase, QFont, QPixmap
 from PyQt5.QtWidgets import QWidget, QDesktopWidget, QVBoxLayout, QLabel, QLineEdit, QApplication, QPushButton, \
@@ -13,8 +14,10 @@ class editTarea1(QMainWindow):
 
         self.setWindowTitle("EDITAR TAREA")
 
+        self.setWindowIcon(QtGui.QIcon("imagenes/icono1.png"))
+
         # Poner el color  de fondo a la ventana
-        self.setStyleSheet("background-color: #C5F9E8;")
+
 
         # Estableciendo las propiedades de ancho y alto
         self.ancho = 500
@@ -33,6 +36,7 @@ class editTarea1(QMainWindow):
         # Se fija el ancho y el alto
         self.setFixedWidth(self.ancho)
         self.setFixedHeight(self.alto)
+        self.set_background_image("imagenes/fnd2e.png")
 
 
 
@@ -108,6 +112,17 @@ class editTarea1(QMainWindow):
 
     def cerrar_ventana(self):
         self.close()
+    def set_background_image(self, image_path):
+        # Load the background image
+        background_image = QPixmap(image_path).scaled(self.ancho, self.alto)
+
+        # Create a QLabel for the background image
+        background_label = QLabel(self)
+        background_label.setPixmap(background_image)
+        background_label.setGeometry(0, 0, self.ancho, self.alto)
+
+        # Set the background image to be in the back of all other widgets
+        background_label.lower()
 
 
 

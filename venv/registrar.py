@@ -1,6 +1,6 @@
 import sys
-
-from PyQt5.QtGui import QFont
+from PyQt5 import QtGui
+from PyQt5.QtGui import QFontDatabase, QFont, QPixmap
 from PyQt5.QtWidgets import QPushButton,QComboBox, QLineEdit, QMainWindow, QDesktopWidget, QLabel, QApplication, QMessageBox
 import re
 
@@ -11,8 +11,10 @@ class registrar1(QMainWindow):
 
         self.setWindowTitle("Registro")
 
+
         # Poner el color  de fondo a la ventana
-        self.setStyleSheet("background-color: #C5F9E8;")
+
+        self.setWindowIcon(QtGui.QIcon("imagenes/icono1.png"))
 
         # Estableciendo las propiedades de ancho y alto
         self.ancho = 600
@@ -31,7 +33,7 @@ class registrar1(QMainWindow):
         # Se fija el ancho y el alto
         self.setFixedWidth(self.ancho)
         self.setFixedHeight(self.alto)
-
+        self.set_background_image("imagenes/fnd1.png")
 
 
         # Hacemos el tipo de letra
@@ -58,7 +60,7 @@ class registrar1(QMainWindow):
         # Le asignamos el tipo de letra
         self.letrero1.setFont(self.letra1)
         # Le ponemos color de fondo, color de texto y margenes al letrero
-        self.letrero1.setStyleSheet("background-color:#C5F9E8  ; color: #000000; padding: 40px;")
+        self.letrero1.setStyleSheet("color: #000000; padding: 40px;")
         self.letrero1.setFixedWidth(400)
         self.letrero1.setFixedHeight(40)
 
@@ -189,7 +191,17 @@ class registrar1(QMainWindow):
         self.volverMenu.setStyleSheet("background-color: #50D4FA; color: #000000  ; padding: 30px")
         self.volverMenu.move(50, 550)
         self.volverMenu.clicked.connect(self.cerrar_ventana)
+    def set_background_image(self, image_path):
+        # Load the background image
+        background_image = QPixmap(image_path).scaled(self.ancho, self.alto)
 
+        # Create a QLabel for the background image
+        background_label = QLabel(self)
+        background_label.setPixmap(background_image)
+        background_label.setGeometry(0, 0, self.ancho, self.alto)
+
+        # Set the background image to be in the back of all other widgets
+        background_label.lower()
     def cerrar_ventana(self):
         self.close()
 
