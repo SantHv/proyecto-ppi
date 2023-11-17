@@ -179,3 +179,9 @@ Correo: sdsdsds@hotmail.com
 Nombre: sdsdsds
 TipoUsuario: Empleado
 
+Usuario: 222
+Contraseña: 222
+Correo: 222@gmail.com
+Nombre: 222
+TipoUsuario: Empleado
+

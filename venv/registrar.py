@@ -179,7 +179,7 @@ class registrar1(QMainWindow):
         self.botonCalcular.setFont(self.letra3)
         self.botonCalcular.setFixedWidth(250)
         self.botonCalcular.setFixedHeight(40)
-        self.botonCalcular.setStyleSheet("background-color: #50D4FA; color: #000000  ; padding: 30px;")
+        self.botonCalcular.setStyleSheet("background-color: #50D4FA; color: #000000  ; padding: 40px;")
         self.botonCalcular.move(320, 550)
         self.botonCalcular.clicked.connect(self.guardar_datos)
 

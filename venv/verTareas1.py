@@ -4,11 +4,6 @@ from PyQt5.QtGui import QFont, QPixmap
 from PyQt5 import QtGui
 from PyQt5.QtWidgets import QApplication, QMainWindow, QPushButton, QLabel, QTextEdit
 
-# Importa tus otras clases
-from addTarea import addtarea11
-from AddEmpleado import Addemple1
-from editTarea import editTarea1
-
 class VerTareas(QMainWindow):
     def __init__(self):
         super(VerTareas, self).__init__()
@@ -48,10 +43,8 @@ class VerTareas(QMainWindow):
         letrero1.setFixedWidth(400)
         letrero1.move(300, 40)
 
-        # Área de texto para mostrar el historial
+        # Área de texto para mostrar las tareas
         self.textoHistorial = QTextEdit(self)
-        self.textoHistorial.setPlaceholderText("Aquí se mostrará las tareas.")
-
         self.textoHistorial.setReadOnly(True)
         self.textoHistorial.setGeometry(100, 100, 600, 400)
 
@@ -64,6 +57,17 @@ class VerTareas(QMainWindow):
         self.volverMenu.setStyleSheet("background-color: #50D4FA; color: #000000  ; padding: 30px;")
         self.volverMenu.move(325, 520)
         self.volverMenu.clicked.connect(self.cerrar_ventana)
+
+        # Llama al método para cargar y mostrar las tareas
+        self.cargar_tareas()
+
+    def cargar_tareas(self):
+        try:
+            with open("tareas.txt", "r") as file:
+                tareas = file.read()
+                self.textoHistorial.setPlainText(tareas)
+        except FileNotFoundError:
+            self.textoHistorial.setPlainText("No hay tareas disponibles.")
 
     def set_background_image(self, image_path):
         # Load the background image

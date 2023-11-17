@@ -209,3 +209,45 @@ Correo: sdaadj@gmail.com
 Nombre: santiago
 TipoUsuario: Empleador
 
+Usuario: empleador
+Contraseña: empleador
+Correo: empleador@gmail.com
+Nombre: empleador
+TipoUsuario: Empleador
+
+Usuario: empleado
+Contraseña: empleado
+Correo: empleado@gmail.com
+Nombre: empleado
+TipoUsuario: Empleado
+
+Usuario: 1
+Contraseña: 1
+Correo: 1@gmail.com
+Nombre: 1
+TipoUsuario: Empleado
+
+Usuario: 1414
+Contraseña: 1414
+Correo: 1414@gmail.com
+Nombre: 1414
+TipoUsuario: Empleado
+
+Usuario: 61616
+Contraseña: 61616
+Correo: 61616@gmail.com
+Nombre: 61616
+TipoUsuario: Empleador
+
+Usuario: dadad
+Contraseña: dadad
+Correo: dada@gmail.com
+Nombre: dadad
+TipoUsuario: Empleador
+
+Usuario: Empleado1
+Contraseña: Empleado1
+Correo: Empleado1@gmail.com
+Nombre: Empleado1
+TipoUsuario: Empleado
+
